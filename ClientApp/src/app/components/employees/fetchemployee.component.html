@@ -1,0 +1,90 @@
+
+<mat-tab-group  (selectedTabChange)="t($event)">
+  <mat-tab label="Create Read Update Delete">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <h1>Employee Data</h1>
+    <p>Reading Employee data from a SQL server,
+    it's a little slow starting as it's using the free platform</p>
+    <p *ngIf="!empList"><em>Loading...</em></p>
+
+    <div>
+      <button mat-raised-button (click)="onCreate();">
+        <mat-icon>person_add</mat-icon>
+
+      </button>
+    </div>
+
+    <table class='table' *ngIf="empList">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Department</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empList" @showState>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.city }}</td>
+          <td>
+          <!--<td>-->
+
+            <a mat-mini-fab mat-button color="primary" matTooltip="Edit" [routerLink]="['/employee/edit/', emp.id]" class="md-john">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-mini-fab [routerLink]="" (click)="delete(emp.id)" matTooltip="Delete" md-direction="right" class="md-john">
+              <mat-icon >delete</mat-icon>
+            </a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </mat-tab>
+
+
+  <mat-tab label="Tech Overview">
+    ADO.NET Crud app using SQL Server stored procedures<br />
+    Example of Angular U.I. added to legacy .NET app ( previously Webforms )<br />
+    demostrating reuse of existing server resources on existing SQL database.
+    <br />
+    <br />
+    The API endpoints do not require authorisation<br />
+    API documentation will be added shortly using Swagger.
+    <br />
+    The add new employee icon is an example of an angular material icon
+    <br />
+    <mat-icon>person_add</mat-icon>
+    <br />
+    The rendering of the list uses a custom animation shared across all the "app-lets".
+
+  </mat-tab>
+
+
+
+  <mat-tab label="Tech Drilldown">
+
+
+  </mat-tab>
+
+  <mat-tab label="Code">
+
+    All code will be on my public github shortly<br />
+    <br />
+    To note each "app-let" was developed with using git add, commits branches, merges etc<br />
+    in my private VSTS repo, the first pulib repo will initially show one master branch, this app/code<br />
+    that is published on Azure from the public Github master branch.
+
+
+  </mat-tab>
+
+</mat-tab-group>

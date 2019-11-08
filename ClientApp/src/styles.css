@@ -1,0 +1,27 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/*
+body, html, .mat-sidenav-container {
+  height: 100vh;
+  }
+
+
+  .mat-sidenav{
+  width:160px;
+  background-color:darkgrey;
+}
+
+
+
+body{
+  margin: 0px;
+  background:#efefef;
+}
+
+.filler{
+  visibility:hidden;
+  flex-grow: 1;
+}
+
+.flexbox{  display:flex; }
+  */
